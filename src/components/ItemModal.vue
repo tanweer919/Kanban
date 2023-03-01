@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { ref, defineEmits, watch, computed } from 'vue'
+import { ref, defineEmits, watch } from 'vue'
 import { Item } from '../models/board'
 
 import ColorSelector from './base/ColorSelector.vue'
@@ -19,8 +19,6 @@ const deleteActivated = ref<boolean>()
 const descHeight = ref<string>()
 const item = ref<Item>(props.modelValue)
 watch(props.modelValue, () => updateDate())
-
-const urlLink = computed(() => window.location.pathname + '#' + item.value.id)
 
 function updateDate() { item.value.updated = new Date().getTime() }
 

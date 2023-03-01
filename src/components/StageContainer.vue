@@ -1,7 +1,6 @@
 <script setup lang='ts'>
-import { ref, defineEmits, watch, onMounted } from 'vue'
+import { ref, defineEmits, watch } from 'vue'
 import { Stage } from 'src/models/board'
-
 import ItemContainer from './ItemContainer.vue'
 import EditableValue from './base/EditableValue.vue'
 import AdditionPlaceholder from './base/AdditionPlaceholder.vue'
@@ -40,7 +39,7 @@ function save() {
           border-b-2 bg-gray-light text-yellow shadow-md z-20" >
         <editable-value label="">
           <template #display>
-            <span>{{stageName}}</span>
+            <span>{{stageName}} ({{ value.items.length }} item{{ value.items.length > 1 ? 's' : '' }})</span>
           </template>
           <template #edit>
             <input

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { onBeforeMount, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import { computed } from '@vue/reactivity'
 import { storeToRefs } from 'pinia'
 import { useBoardStore } from '../store/board'
@@ -9,7 +9,7 @@ import ItemModal from './ItemModal.vue'
 import AdditionPlaceholder from './base/AdditionPlaceholder.vue'
 
 let boardStore = useBoardStore()
-const { boards, selectedBoardIndex, selectedStageIndex, ready, selectedItemIndex, selectedItem } = storeToRefs(boardStore)
+const { boards, selectedBoardIndex, selectedStageIndex, ready,  selectedItem } = storeToRefs(boardStore)
 
 onMounted(() => {
   const idFromUrl = decodeURI(window.location.hash.substring(1))
@@ -62,7 +62,7 @@ function setItemSelection(stageIndex: number, itemIndex: number) {
           id: Date.now().toString(36),
           name: 'NAME',
           desc: 'DESCRIPTION',
-          color: 'blue',
+          color: 'yellow',
           updated: new Date().getTime(),
           created: new Date().getTime()
         }

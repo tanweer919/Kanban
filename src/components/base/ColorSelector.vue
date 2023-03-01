@@ -8,9 +8,9 @@ const emit = defineEmits<{
 
 const activated = ref<boolean>(false)
 const colors = [
+  'yellow',
   'purple',
   'orange',
-  'yellow',
   'green',
 ]
 const baseClasses = [
